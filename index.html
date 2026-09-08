@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UWaterloo Campus Google Map</title>
+
+    <!-- links for the uploaded google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>UNIVERSITY OF WATERLOO MAP!!!</h1> 
+    <h5> WATER WATER WATER <br>
+        LOO LOO LOO !!! <br> </h5>
+    <h6> Welcome to the University of Waterloo! <br>
+        Find the campus map sorted by faculty below:</h6>
+    <hr style="border: none; background-color: rgb(242, 214, 105); height: 4px;">
+   
+
+
+    <div class="legend-container">
+        <h2 class="legend-title">LEGEND:</h2>
+
+        <div class="legend-item">
+            <img src="art.png" alt="Faculty of Art icon" class="legend-icon">
+            <span class="legend-label">Arts</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="health.png" alt="Faculty of Health icon" class="legend-icon">
+            <span class="legend-label">Health</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="env.png" alt="Faculty of Environment icon" class="legend-icon">
+            <span class="legend-label">Environment</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="eng.png" alt="Faculty of Engineering icon" class="legend-icon">
+            <span class="legend-label">Engineering</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="math.png" alt="Faculty of Math icon" class="legend-icon">
+            <span class="legend-label">Math</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="sci.png" alt="Faculty of Science icon" class="legend-icon">
+            <span class="legend-label">Science</span>
+        </div>
+
+        <div class="legend-item">
+            <img src="uwat.png" alt="UWaterloo shield" class="legend-icon">
+            <span class="legend-label">Other</span>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="script.js"></script>
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDB-Mx9u5FJkds7JiBf7vp_D0UftE5lJ14&map_ids=bf02be37cedfddc179a550e9&loading=async&libraries=marker&callback=initMap">
+</script>
+    
+    <hr style="border: none; background-color: rgb(242, 214, 105); height: 10px;">
+    <hr style="border: none; background-color: rgb(255, 255, 255); height: 6px;">
+
+    <!-- faculty filter - buttons to filter buildings for each faculty -->
+    <section class="map-controls" aria-label="Map controls">
+        <label for="building-search">Search buildings</label>
+        <div class="search-row">
+            <input id="building-search" type="search" placeholder="Try Davis Centre or Biology..." autocomplete="off">
+            <button id="clear-search" type="button">Clear</button>
+        </div>
+        <div class="filter-row" aria-label="Filter buildings by faculty">
+            <button class="faculty-filter active" type="button" data-faculty="all">All</button>
+            <button class="faculty-filter" type="button" data-faculty="art">Arts</button>
+            <button class="faculty-filter" type="button" data-faculty="health">Health</button>
+            <button class="faculty-filter" type="button" data-faculty="env">Environment</button>
+            <button class="faculty-filter" type="button" data-faculty="eng">Engineering</button>
+            <button class="faculty-filter" type="button" data-faculty="math">Math</button>
+            <button class="faculty-filter" type="button" data-faculty="sci">Science</button>
+            <button class="faculty-filter" type="button" data-faculty="uwat">Other</button>
+        </div>
+        <p id="search-status" class="search-status" aria-live="polite">Showing all buildings</p>
+    </section>
+
+    <img src="waterloo.png" alt="University of Waterloo" class="end">
+
+    
+
+
+</body>
+</html>
